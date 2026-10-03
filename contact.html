@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact — Bùi Thị Lan Anh | Portfolio</title>
+
+  <meta name="description"
+    content="Liên hệ với Bùi Thị Lan Anh — sinh viên Kinh tế đối ngoại, Đại học Ngoại thương, Hà Nội.">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+
+  <style>
+    .contact-hero-section {
+      position: relative;
+      min-height: 100vh;
+      padding: 130px 24px 90px;
+      overflow: hidden;
+      background: var(--grad-sunset-hero);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .garden-backdrop-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center bottom;
+      z-index: 1;
+      opacity: 0.9;
+    }
+
+    .contact-content-container {
+      position: relative;
+      z-index: 3;
+      max-width: 820px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .contact-header-block {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    /* Confirmation Modal */
+    .confirmation-modal-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(40, 20, 31, 0.7);
+      backdrop-filter: blur(8px);
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      opacity: 0;
+      pointer-events: none;
+      transition: var(--transition-smooth);
+    }
+
+    .confirmation-modal-backdrop.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .confirmation-card {
+      background: var(--c-warm-cream);
+      border: 2px solid var(--c-champagne-gold);
+      border-radius: var(--border-radius-lg);
+      padding: 50px 40px;
+      max-width: 540px;
+      width: 100%;
+      text-align: center;
+      position: relative;
+      box-shadow: var(--shadow-fairytale-lg), var(--glow-gold);
+      transform: scale(0.9) translateY(20px);
+      transition: var(--transition-magical);
+    }
+
+    .confirmation-modal-backdrop.active .confirmation-card {
+      transform: scale(1) translateY(0);
+    }
+
+    .confirmation-seal {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #8A2B43 0%, #5E1729 100%);
+      border: 2px solid var(--c-champagne-gold);
+      box-shadow: 0 6px 20px rgba(94, 23, 41, 0.4), var(--glow-gold);
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--c-gold-light);
+      font-size: 1.8rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ==================== ROYAL HEADER ==================== -->
+  <header class="royal-header">
+    <div class="page-container nav-container">
+
+      <a href="index.html" class="brand-crest" id="brand-logo">
+        <div class="brand-crest-icon">✦</div>
+
+        <div>
+          <span>BÙI THỊ LAN ANH</span>
+          <span class="brand-title-sub">Personal Portfolio</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="royal-nav">
+          <li>
+            <a href="index.html" class="royal-nav-link" id="nav-home">
+              HOME
+            </a>
+          </li>
+
+          <li>
+            <a href="about.html" class="royal-nav-link" id="nav-about">
+              ABOUT
+            </a>
+          </li>
+
+          <li>
+            <a href="experience.html" class="royal-nav-link" id="nav-experience">
+              EXPERIENCE
+            </a>
+          </li>
+
+          <li>
+            <a href="projects.html" class="royal-nav-link" id="nav-projects">
+              PROJECTS
+            </a>
+          </li>
+
+          <li>
+            <a href="contact.html" class="royal-nav-link active" id="nav-contact">
+              CONTACT
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+
+        <button class="ambience-toggle" id="ambience-toggle-btn" aria-label="Toggle Fairytale Ambience">
+          <span class="sparkle-icon">✦</span>
+          Magic: On
+        </button>
+
+        <button class="mobile-menu-btn" aria-label="Open Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ==================== CONTACT ==================== -->
+  <main>
+
+    <section class="contact-hero-section">
+
+      <!-- Background Illustrated Enchanted Sunset Garden -->
+      <img src="assets/images/garden-sunset.svg" alt="Enchanted Rose Garden at Sunset" class="garden-backdrop-img">
+
+      <div class="hero-overlay-gradient"></div>
+      <div class="mist-layer"></div>
+
+
+      <div class="contact-content-container">
+
+        <!-- Header -->
+        <div class="contact-header-block reveal-fade-up">
+
+          <div class="eyebrow-text">
+            CHAPTER IV • LET'S CONNECT
+          </div>
+
+          <h1 class="page-title" style="font-size: clamp(2.4rem, 5vw, 4rem); margin-bottom: 12px;">
+
+            LET'S CONNECT<br>
+            <span class="shimmer-text">
+              WITH ME
+            </span>
+
+          </h1>
+
+          <div class="filigree-divider">
+            <span>🌹 ✦ 🌹</span>
+          </div>
+
+          <p class="page-subtitle" style="margin: 0 auto; color: var(--c-deep-rose); font-size: 1.25rem;">
+
+            “Every conversation can be the beginning of a new opportunity.”
+
+          </p>
+
+        </div>
+
+
+        <!-- Magical Contact Form -->
+        <div class="invitation-parchment-wrapper reveal-fade-up reveal-delay-1">
+
+          <div class="wax-seal-badge">
+            ✦
+          </div>
+
+
+          <div style="text-align: center; margin-bottom: 30px;">
+
+            <div style="
+                font-family: var(--font-serif-heading);
+                font-size: 1.4rem;
+                color: var(--c-deep-rose);
+                font-style: italic;
+              ">
+
+              Let's Start a Conversation
+
+            </div>
+
+            <div style="
+                font-size: 0.8rem;
+                color: var(--c-champagne-gold);
+                letter-spacing: 0.2em;
+                text-transform: uppercase;
+              ">
+
+              Bùi Thị Lan Anh • Direct Contact
+
+            </div>
+
+          </div>
+
+
+          <!-- Contact Form -->
+          <form id="royal-contact-form">
+
+            <!-- Name -->
+            <div class="royal-form-group">
+
+              <label for="sender-name" class="royal-form-label">
+
+                YOUR NAME
+
+              </label>
+
+              <input type="text" id="sender-name" name="name" class="royal-input" placeholder="Enter your name"
+                required>
+
+            </div>
+
+
+            <!-- Email -->
+            <div class="royal-form-group">
+
+              <label for="sender-email" class="royal-form-label">
+
+                YOUR EMAIL ADDRESS
+
+              </label>
+
+              <input type="email" id="sender-email" name="email" class="royal-input"
+                placeholder="Enter your email address" required>
+
+            </div>
+
+
+            <!-- Message -->
+            <div class="royal-form-group">
+
+              <label for="sender-message" class="royal-form-label">
+
+                YOUR MESSAGE
+
+              </label>
+
+              <textarea id="sender-message" name="message" class="royal-textarea"
+                placeholder="Tell me about your project, collaboration, internship opportunity, or anything you'd like to discuss..."
+                required></textarea>
+
+            </div>
+
+
+            <!-- Submit -->
+            <div style="
+                text-align: center;
+                margin-top: 36px;
+              ">
+
+              <button type="submit" class="btn-royal btn-royal-primary" style="
+                  padding: 16px 44px;
+                  font-size: 0.9rem;
+                ">
+
+                SEND MESSAGE ✦
+
+              </button>
+
+            </div>
+
+          </form>
+
+
+          <!-- Contact Details -->
+          <div style="
+              margin-top: 40px;
+              padding-top: 24px;
+              border-top: 1px solid rgba(216, 184, 120, 0.4);
+              text-align: center;
+            ">
+
+            <p style="
+                font-size: 0.85rem;
+                color: var(--c-text-muted);
+                margin-bottom: 12px;
+              ">
+
+              Email:
+
+              <a href="mailto:anh261857@gmail.com" style="
+                  color: var(--c-deep-rose);
+                  font-weight: 600;
+                  text-decoration: underline;
+                ">
+
+                anh261857@gmail.com
+
+              </a>
+
+            </p>
+
+
+            <p style="
+                font-size: 0.8rem;
+                color: var(--c-champagne-gold);
+                letter-spacing: 0.15em;
+              ">
+
+              FOREIGN TRADE UNIVERSITY • HANOI
+
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ==================== CONFIRMATION POPUP ==================== -->
+
+  <div class="confirmation-modal-backdrop" id="seal-confirmation-modal" role="dialog" aria-modal="true">
+
+    <div class="confirmation-card">
+
+      <div class="confirmation-seal wax-stamped">
+        ✦
+      </div>
+
+      <div class="eyebrow-text">
+        MESSAGE RECEIVED
+      </div>
+
+      <h3 style="
+          font-size: 2.2rem;
+          color: var(--c-deep-rose);
+          margin-bottom: 12px;
+        ">
+
+        Thank You for Reaching Out
+
+      </h3>
+
+      <div class="filigree-divider">
+        <span>✦</span>
+      </div>
+
+      <p style="
+          color: var(--c-text-secondary);
+          line-height: 1.7;
+          font-size: 0.98rem;
+          margin-bottom: 28px;
+        ">
+
+        Thank you for reaching out.
+        I will get back to you as soon as possible.
+
+      </p>
+
+      <button class="btn-royal btn-royal-primary" id="close-confirmation-btn" style="
+          padding: 12px 32px;
+          font-size: 0.8rem;
+        ">
+
+        BACK TO PORTFOLIO ✦
+
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- ==================== FOOTER ==================== -->
+
+  <footer class="royal-footer">
+
+    <div class="page-container">
+
+      <div class="brand-crest" style="
+          justify-content: center;
+          margin-bottom: 20px;
+        ">
+
+        <div class="brand-crest-icon">
+          ✦
+        </div>
+
+      </div>
+
+
+      <p class="footer-quote">
+
+        “Every experience is a chapter.
+        Every project is a new story.”
+
+      </p>
+
+
+      <div class="footer-social-links">
+
+        <!-- Email -->
+        <a href="mailto:anh261857@gmail.com" class="footer-social-btn" aria-label="Email">
+
+          <span>✉</span>
+
+        </a>
+
+      </div>
+
+
+      <p class="footer-copyright">
+
+        © 2026 BÙI THỊ LAN ANH.
+        ALL RIGHTS RESERVED.
+
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- ==================== SCRIPTS ==================== -->
+
+  <script src="assets/js/particles.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

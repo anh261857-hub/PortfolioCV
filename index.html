@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Bùi Thị Lan Anh — Personal Portfolio</title>
+
+  <meta name="description"
+    content="Portfolio cá nhân của Bùi Thị Lan Anh, sinh viên Kinh tế đối ngoại tại Đại học Ngoại thương, định hướng phát triển trong lĩnh vực Marketing.">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+
+  <style>
+    /* =========================================================
+       HERO
+       ========================================================= */
+
+    .hero-fairytale {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 24px 80px;
+      overflow: hidden;
+      background: var(--grad-sunset-hero);
+    }
+
+    .hero-parallax-castle {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      will-change: transform;
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .hero-castle-backdrop {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center bottom;
+      opacity: 0.96;
+    }
+
+    .hero-overlay-gradient {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(circle at center,
+          rgba(255, 247, 248, 0.30) 0%,
+          rgba(248, 221, 232, 0.50) 60%,
+          rgba(107, 64, 83, 0.45) 100%);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .hero-parallax-mist {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 240px;
+      z-index: 2;
+      pointer-events: none;
+      will-change: transform;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      width: 100%;
+      max-width: 920px;
+      margin: 0 auto;
+      text-align: center;
+
+      background: rgba(255, 247, 248, 0.84);
+      border: 1px solid rgba(216, 184, 120, 0.75);
+      border-radius: var(--border-radius-lg);
+
+      padding: 56px 40px;
+
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+
+      box-shadow:
+        var(--shadow-fairytale-lg),
+        0 0 50px rgba(248, 221, 232, 0.8);
+
+      will-change: transform;
+      transition:
+        transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .hero-content::before {
+      content: "❖";
+      position: absolute;
+      top: 10px;
+      left: 14px;
+      font-size: 1.2rem;
+      color: var(--c-champagne-gold);
+    }
+
+    .hero-content::after {
+      content: "❖";
+      position: absolute;
+      right: 14px;
+      bottom: 10px;
+      font-size: 1.2rem;
+      color: var(--c-champagne-gold);
+    }
+
+    .hero-title-main {
+      font-family: var(--font-serif-heading);
+      font-size: clamp(2.6rem, 5.5vw, 4.6rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: 0.03em;
+      color: var(--c-deep-rose);
+      margin-bottom: 12px;
+    }
+
+    .hero-tagline {
+      font-family: var(--font-serif-heading);
+      font-size: clamp(1.05rem, 2.5vw, 1.8rem);
+      font-weight: 600;
+      letter-spacing: 0.10em;
+      line-height: 1.4;
+      color: var(--c-champagne-gold);
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .hero-intro {
+      max-width: 700px;
+      margin: 0 auto 22px;
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--c-text-secondary);
+    }
+
+    .hero-quote {
+      max-width: 650px;
+      margin: 0 auto 34px;
+      font-family: var(--font-serif-heading);
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+      font-style: italic;
+      line-height: 1.7;
+      color: var(--c-text-secondary);
+    }
+
+    .hero-cta-group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+
+    /* =========================================================
+       HIGHLIGHT CARDS
+       ========================================================= */
+
+    .prologue-preview-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,
+          minmax(260px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .preview-card {
+      position: relative;
+      padding: 34px 28px;
+      text-align: center;
+
+      background: var(--grad-rose-glass);
+      border: 1px solid rgba(216, 184, 120, 0.4);
+      border-radius: var(--border-radius-lg);
+
+      transition: var(--transition-smooth);
+    }
+
+    .preview-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--c-champagne-gold);
+
+      box-shadow:
+        var(--shadow-fairytale-lg),
+        var(--glow-gold);
+    }
+
+    .preview-icon {
+      margin-bottom: 16px;
+      font-size: 2rem;
+    }
+
+    .preview-title {
+      margin-bottom: 10px;
+      font-size: 1.35rem;
+      color: var(--c-deep-rose);
+    }
+
+    .preview-desc {
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--c-text-secondary);
+    }
+
+    /* =========================================================
+   FALLING PETALS
+   ========================================================= */
+
+    .falling-petals {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 4;
+    }
+
+    .falling-petals span {
+      position: absolute;
+      top: -60px;
+      left: var(--left);
+      font-size: var(--size);
+      opacity: 0;
+      animation: fallingPetal var(--duration) linear infinite;
+      animation-delay: var(--delay);
+      filter: drop-shadow(0 3px 5px rgba(107, 64, 83, 0.18));
+    }
+
+    .falling-petals span:nth-child(1) {
+      --left: 5%;
+      --size: 18px;
+      --duration: 10s;
+      --delay: 0s;
+    }
+
+    .falling-petals span:nth-child(2) {
+      --left: 13%;
+      --size: 14px;
+      --duration: 13s;
+      --delay: -4s;
+    }
+
+    .falling-petals span:nth-child(3) {
+      --left: 22%;
+      --size: 17px;
+      --duration: 11s;
+      --delay: -7s;
+    }
+
+    .falling-petals span:nth-child(4) {
+      --left: 31%;
+      --size: 13px;
+      --duration: 14s;
+      --delay: -2s;
+    }
+
+    .falling-petals span:nth-child(5) {
+      --left: 40%;
+      --size: 19px;
+      --duration: 12s;
+      --delay: -9s;
+    }
+
+    .falling-petals span:nth-child(6) {
+      --left: 49%;
+      --size: 15px;
+      --duration: 15s;
+      --delay: -5s;
+    }
+
+    .falling-petals span:nth-child(7) {
+      --left: 58%;
+      --size: 17px;
+      --duration: 11s;
+      --delay: -1s;
+    }
+
+    .falling-petals span:nth-child(8) {
+      --left: 67%;
+      --size: 14px;
+      --duration: 13s;
+      --delay: -8s;
+    }
+
+    .falling-petals span:nth-child(9) {
+      --left: 76%;
+      --size: 18px;
+      --duration: 12s;
+      --delay: -3s;
+    }
+
+    .falling-petals span:nth-child(10) {
+      --left: 84%;
+      --size: 15px;
+      --duration: 14s;
+      --delay: -10s;
+    }
+
+    .falling-petals span:nth-child(11) {
+      --left: 91%;
+      --size: 17px;
+      --duration: 10s;
+      --delay: -6s;
+    }
+
+    .falling-petals span:nth-child(12) {
+      --left: 97%;
+      --size: 13px;
+      --duration: 15s;
+      --delay: -11s;
+    }
+
+    @keyframes fallingPetal {
+
+      0% {
+        transform: translate3d(0, -60px, 0) rotate(0deg);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 0.8;
+      }
+
+      50% {
+        transform: translate3d(55px, 50vh, 0) rotate(180deg);
+      }
+
+      90% {
+        opacity: 0.7;
+      }
+
+      100% {
+        transform: translate3d(-45px, 110vh, 0) rotate(360deg);
+        opacity: 0;
+      }
+
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .falling-petals {
+        display: none;
+      }
+
+    }
+
+    /* =========================================================
+       MOBILE
+       ========================================================= */
+
+    @media (max-width: 768px) {
+
+      .hero-fairytale {
+        min-height: 100svh;
+        padding: 100px 18px 60px;
+      }
+
+      .hero-content {
+        padding: 42px 22px;
+      }
+
+      .hero-title-main {
+        font-size: clamp(2.2rem, 10vw, 3.5rem);
+      }
+
+      .hero-tagline {
+        font-size: 0.95rem;
+        letter-spacing: 0.06em;
+      }
+
+      .hero-intro {
+        font-size: 0.95rem;
+      }
+
+      .hero-cta-group {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .hero-cta-group .btn-royal {
+        width: 100%;
+      }
+
+      .prologue-preview-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+
+    /* =========================================================
+       REDUCED MOTION
+       ========================================================= */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .hero-parallax-castle,
+      .hero-content,
+      .preview-card {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <!-- =========================================================
+       HEADER
+       ========================================================= -->
+
+  <header class="royal-header">
+
+    <div class="page-container nav-container">
+
+      <!-- Brand -->
+
+      <a href="index.html" class="brand-crest" id="brand-logo">
+
+        <div class="brand-crest-icon">
+          ✦
+        </div>
+
+        <div>
+          <span>BÙI THỊ LAN ANH</span>
+          <span class="brand-title-sub">
+            Personal Portfolio
+          </span>
+        </div>
+
+      </a>
+
+
+      <!-- Navigation -->
+
+      <nav>
+
+        <ul class="royal-nav">
+
+          <li>
+            <a href="index.html" class="royal-nav-link active" id="nav-home">
+              HOME
+            </a>
+          </li>
+
+          <li>
+            <a href="about.html" class="royal-nav-link" id="nav-about">
+              ABOUT
+            </a>
+          </li>
+
+          <li>
+            <a href="experience.html" class="royal-nav-link" id="nav-experience">
+              EXPERIENCE
+            </a>
+          </li>
+
+          <li>
+            <a href="projects.html" class="royal-nav-link" id="nav-projects">
+              PROJECTS
+            </a>
+          </li>
+
+          <li>
+            <a href="contact.html" class="royal-nav-link" id="nav-contact">
+              CONTACT
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+      <!-- Navigation actions -->
+
+      <div class="nav-actions">
+
+        <button class="ambience-toggle" id="ambience-toggle-btn" aria-label="Toggle Fairytale Ambience" type="button">
+
+          <span class="sparkle-icon">
+            ✦
+          </span>
+
+          Magic: On
+
+        </button>
+
+
+        <button class="mobile-menu-btn" aria-label="Open Navigation Menu" type="button">
+
+          <span></span>
+          <span></span>
+          <span></span>
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================================================
+       MAIN
+       ========================================================= -->
+
+  <main>
+
+
+    <!-- =======================================================
+         HERO
+         ======================================================= -->
+
+    <section class="hero-fairytale" id="hero">
+
+      <!-- Falling petals -->
+      <div class="falling-petals" aria-hidden="true">
+        <span>🌸</span>
+        <span>🌸</span>
+        <span>🍂</span>
+        <span>🌸</span>
+        <span>🍁</span>
+        <span>🌸</span>
+        <span>🍂</span>
+        <span>🌸</span>
+        <span>🍁</span>
+        <span>🌸</span>
+        <span>🍂</span>
+        <span>🌸</span>
+      </div>
+
+      <!-- Magical light -->
+
+      <div class="hero-celestial-glow"></div>
+
+
+      <!-- Clouds -->
+
+      <div class="hero-clouds-back"></div>
+
+      <div class="hero-clouds-front"></div>
+
+
+      <!-- Castle -->
+
+      <div class="hero-parallax-castle">
+
+        <img src="assets/images/castle-hero.svg" alt="Fairytale castle at sunset"
+          class="hero-castle-backdrop castle-ambient-motion">
+
+      </div>
+
+
+      <!-- Mist -->
+
+      <div class="hero-parallax-mist">
+
+        <div class="hero-mist-layer-1"></div>
+
+        <div class="hero-mist-layer-2"></div>
+
+      </div>
+
+
+      <!-- Gradient -->
+
+      <div class="hero-overlay-gradient"></div>
+
+
+      <!-- Hero content -->
+
+      <div class="hero-content reveal-fade-up">
+
+        <div class="eyebrow-text">
+          WELCOME TO MY STORY
+        </div>
+
+
+        <h1 class="hero-title-main">
+          BÙI THỊ LAN ANH
+        </h1>
+
+
+        <div class="hero-tagline">
+          ECONOMICS &amp; INTERNATIONAL BUSINESS
+        </div>
+
+
+        <div class="filigree-divider">
+          <span>✦ ✦ ✦</span>
+        </div>
+
+
+        <p class="hero-intro">
+
+          Mình là Lan Anh – sinh viên năm 4 ngành
+          <strong>Kinh tế đối ngoại</strong> tại
+          <strong>Đại học Ngoại thương</strong>.
+          Mình đang học hỏi và phát triển trong lĩnh vực
+          <strong>Marketing</strong>, đồng thời khám phá
+          những cơ hội để biến ý tưởng thành những dự án
+          có giá trị.
+
+        </p>
+
+
+        <p class="hero-quote">
+
+          “Every experience is a chapter.
+          Every project is a new story.”
+
+        </p>
+
+
+        <!-- Buttons -->
+
+        <div class="hero-cta-group">
+
+          <a href="about.html" class="btn-royal btn-royal-primary" id="btn-explore-story">
+
+            EXPLORE MY STORY
+
+            <span class="btn-sparkle">
+              ✦
+            </span>
+
+          </a>
+
+
+          <a href="projects.html" class="btn-royal btn-royal-secondary" id="btn-view-projects">
+
+            VIEW MY PROJECTS
+
+            <span class="btn-sparkle">
+              ✧
+            </span>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         STORY / HIGHLIGHTS
+         ======================================================= -->
+
+    <section class="section-wrapper" id="prologue-highlights" style="background: var(--c-ivory);">
+
+      <div class="page-container">
+
+
+        <!-- Section heading -->
+
+        <div class="section-header reveal-fade-up">
+
+          <div class="eyebrow-text">
+            MY STORY
+          </div>
+
+
+          <h2 class="page-title">
+            A JOURNEY OF LEARNING &amp; CREATION
+          </h2>
+
+
+          <div class="filigree-divider">
+            <span>✦</span>
+          </div>
+
+
+          <p class="page-subtitle" style="margin: 0 auto;">
+
+            Mỗi trải nghiệm là một chương mới –
+            từ hành trình học tập tại Đại học Ngoại thương,
+            hoạt động câu lạc bộ, công việc thực tế
+            đến những dự án Marketing mà mình đã có cơ hội tham gia.
+
+          </p>
+
+        </div>
+
+
+        <!-- Cards -->
+
+        <div class="prologue-preview-grid">
+
+
+          <!-- ABOUT -->
+
+          <div class="preview-card reveal-fade-up reveal-delay-1">
+
+            <div class="preview-icon">
+              🖼️
+            </div>
+
+
+            <div class="chapter-badge">
+              ABOUT ME
+            </div>
+
+
+            <h3 class="preview-title">
+              My Story
+            </h3>
+
+
+            <p class="preview-desc">
+
+              Tìm hiểu thêm về Lan Anh,
+              hành trình học tập tại Đại học Ngoại thương
+              và định hướng phát triển trong lĩnh vực Marketing.
+
+            </p>
+
+
+            <a href="about.html" class="btn-royal btn-royal-outline" style="padding: 10px 24px; font-size: 0.78rem;">
+
+              MEET LAN ANH ✦
+
+            </a>
+
+          </div>
+
+
+          <!-- EXPERIENCE -->
+
+          <div class="preview-card reveal-fade-up reveal-delay-2">
+
+            <div class="preview-icon">
+              📜
+            </div>
+
+
+            <div class="chapter-badge">
+              EXPERIENCE
+            </div>
+
+
+            <h3 class="preview-title">
+              My Journey
+            </h3>
+
+
+            <p class="preview-desc">
+
+              Khám phá những trải nghiệm của mình
+              tại các câu lạc bộ, môi trường doanh nghiệp
+              và những công việc đã giúp mình tích lũy thêm
+              kinh nghiệm thực tế.
+
+            </p>
+
+
+            <a href="experience.html" class="btn-royal btn-royal-outline"
+              style="padding: 10px 24px; font-size: 0.78rem;">
+
+              VIEW MY JOURNEY ✦
+
+            </a>
+
+          </div>
+
+
+          <!-- PROJECTS -->
+
+          <div class="preview-card reveal-fade-up reveal-delay-3">
+
+            <div class="preview-icon">
+              🎨
+            </div>
+
+
+            <div class="chapter-badge">
+              PROJECTS
+            </div>
+
+
+            <h3 class="preview-title">
+              My Projects
+            </h3>
+
+
+            <p class="preview-desc">
+
+              Một số dự án mình đã tham gia,
+              từ Marketing, nghiên cứu thị trường,
+              xây dựng nội dung đến các hoạt động truyền thông.
+
+            </p>
+
+
+            <a href="projects.html" class="btn-royal btn-royal-outline" style="padding: 10px 24px; font-size: 0.78rem;">
+
+              VIEW PROJECTS ✦
+
+            </a>
+
+          </div>
+
+
+          <!-- CONTACT -->
+
+          <div class="preview-card reveal-fade-up reveal-delay-3">
+
+            <div class="preview-icon">
+              💌
+            </div>
+
+
+            <div class="chapter-badge">
+              CONTACT
+            </div>
+
+
+            <h3 class="preview-title">
+              Let’s Connect
+            </h3>
+
+
+            <p class="preview-desc">
+
+              Nếu bạn muốn trao đổi về một dự án,
+              cơ hội thực tập hoặc đơn giản là kết nối,
+              mình rất vui được trò chuyện cùng bạn.
+
+            </p>
+
+
+            <a href="contact.html" class="btn-royal btn-royal-outline" style="padding: 10px 24px; font-size: 0.78rem;">
+
+              SAY HELLO ✦
+
+            </a>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+
+  <footer class="royal-footer">
+
+    <div class="page-container">
+
+
+      <div class="brand-crest" style="
+          justify-content: center;
+          margin-bottom: 20px;
+        ">
+
+        <div class="brand-crest-icon">
+          ✦
+        </div>
+
+      </div>
+
+
+      <p class="footer-quote">
+
+        “Every experience is a chapter.
+        Every project is a new story.”
+
+      </p>
+
+
+      <div class="footer-social-links">
+
+        <a href="mailto:anh261857@gmail.com" class="footer-social-btn" aria-label="Email Bùi Thị Lan Anh">
+
+          <span>✉</span>
+
+        </a>
+
+      </div>
+
+
+      <p class="footer-copyright">
+
+        © 2026 BÙI THỊ LAN ANH.
+        ALL RIGHTS RESERVED.
+
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================================================
+       JAVASCRIPT
+       ========================================================= -->
+
+  <script src="assets/js/particles.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
