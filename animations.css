@@ -1,0 +1,600 @@
+/* =========================================================
+   LUXURY PINK FAIRYTALE — HERO ANIMATIONS
+   ========================================================= */
+
+/* HERO */
+.hero-fairytale {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* =========================================================
+   CASTLE — SLOW CINEMATIC ZOOM
+   ========================================================= */
+
+.hero-parallax-castle {
+  position: absolute;
+  inset: -5%;
+  width: 110%;
+  height: 110%;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.hero-castle-backdrop {
+  position: absolute;
+  width: 110%;
+  height: 110%;
+  max-width: none;
+  left: -5%;
+  top: -5%;
+
+  object-fit: cover;
+  object-position: center bottom;
+
+  opacity: 0.96;
+
+  transform-origin: center center;
+  will-change: transform;
+
+  animation: castleBreathing 18s ease-in-out infinite;
+}
+
+@keyframes castleBreathing {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.055);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+/* =========================================================
+   CLOUDS
+   ========================================================= */
+
+.hero-clouds-back,
+.hero-clouds-front {
+  position: absolute;
+  inset: -20%;
+  width: 140%;
+  height: 140%;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.hero-clouds-back {
+  z-index: 2;
+  opacity: 0.65;
+  animation: cloudsBackDrift 55s ease-in-out infinite alternate;
+}
+
+@keyframes cloudsBackDrift {
+  0% {
+    transform: translateX(-35px);
+  }
+
+  50% {
+    transform: translateX(15px);
+  }
+
+  100% {
+    transform: translateX(50px);
+  }
+}
+
+.hero-clouds-front {
+  z-index: 3;
+  opacity: 0.8;
+  animation: cloudsFrontDrift 32s ease-in-out infinite alternate;
+}
+
+@keyframes cloudsFrontDrift {
+  0% {
+    transform: translateX(50px);
+  }
+
+  50% {
+    transform: translateX(-30px);
+  }
+
+  100% {
+    transform: translateX(-90px);
+  }
+}
+
+
+/* =========================================================
+   SOFT CELESTIAL LIGHT
+   ========================================================= */
+
+.hero-celestial-glow {
+  position: absolute;
+  inset: -20%;
+  z-index: 4;
+  pointer-events: none;
+
+  background:
+    radial-gradient(circle at 50% 42%,
+      rgba(255, 255, 255, 0.55) 0%,
+      rgba(255, 236, 244, 0.25) 25%,
+      rgba(255, 215, 232, 0.10) 45%,
+      transparent 70%);
+
+  animation: celestialGlow 9s ease-in-out infinite;
+}
+
+@keyframes celestialGlow {
+
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.95;
+    transform: scale(1.08);
+  }
+}
+
+
+/* =========================================================
+   MIST
+   ========================================================= */
+
+.hero-parallax-mist {
+  overflow: hidden;
+}
+
+.hero-mist-layer-1,
+.hero-mist-layer-2 {
+  position: absolute;
+  inset: -20%;
+  width: 140%;
+  height: 140%;
+
+  pointer-events: none;
+  will-change: transform;
+}
+
+.hero-mist-layer-1 {
+  opacity: 0.35;
+  animation: mistSlow 24s ease-in-out infinite alternate;
+}
+
+.hero-mist-layer-2 {
+  opacity: 0.25;
+  animation: mistFast 15s ease-in-out infinite alternate;
+}
+
+@keyframes mistSlow {
+  0% {
+    transform: translateX(-30px);
+  }
+
+  100% {
+    transform: translateX(40px);
+  }
+}
+
+@keyframes mistFast {
+  0% {
+    transform: translateX(40px);
+  }
+
+  100% {
+    transform: translateX(-50px);
+  }
+}
+
+
+/* =========================================================
+   GOLD SPARKLES
+   ========================================================= */
+
+.hero-sparkles {
+  position: absolute;
+  inset: 0;
+  z-index: 8;
+  pointer-events: none;
+}
+
+.sparkle {
+  position: absolute;
+
+  color: rgba(255, 245, 218, 0.9);
+
+  text-shadow:
+    0 0 8px rgba(255, 224, 170, 0.9),
+    0 0 20px rgba(255, 220, 180, 0.55);
+
+  animation: sparkleTwinkle 4s ease-in-out infinite;
+}
+
+.sparkle-1 {
+  left: 12%;
+  top: 24%;
+  animation-delay: 0s;
+}
+
+.sparkle-2 {
+  left: 25%;
+  top: 62%;
+  animation-delay: 1s;
+}
+
+.sparkle-3 {
+  left: 76%;
+  top: 25%;
+  animation-delay: 2s;
+}
+
+.sparkle-4 {
+  left: 86%;
+  top: 54%;
+  animation-delay: 0.8s;
+}
+
+.sparkle-5 {
+  left: 65%;
+  top: 70%;
+  animation-delay: 1.8s;
+}
+
+.sparkle-6 {
+  left: 38%;
+  top: 18%;
+  animation-delay: 2.5s;
+}
+
+@keyframes sparkleTwinkle {
+
+  0%,
+  100% {
+    opacity: 0.15;
+    transform: scale(0.7) rotate(0deg);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.35) rotate(45deg);
+  }
+}
+
+
+/* =========================================================
+   ROSE PETALS
+   ========================================================= */
+
+.hero-petals {
+  position: absolute;
+  inset: 0;
+  z-index: 9;
+
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.petal {
+  position: absolute;
+  display: block;
+
+  font-size: 18px;
+  opacity: 0;
+
+  filter:
+    drop-shadow(0 3px 5px rgba(107, 64, 83, 0.18));
+
+  animation: petalFall 12s linear infinite;
+}
+
+.petal-1 {
+  left: 8%;
+  animation-delay: 0s;
+}
+
+.petal-2 {
+  left: 24%;
+  animation-delay: 4s;
+}
+
+.petal-3 {
+  left: 42%;
+  animation-delay: 7s;
+}
+
+.petal-4 {
+  left: 60%;
+  animation-delay: 2s;
+}
+
+.petal-5 {
+  left: 78%;
+  animation-delay: 6s;
+}
+
+.petal-6 {
+  left: 92%;
+  animation-delay: 9s;
+}
+
+@keyframes petalFall {
+  0% {
+    top: -10%;
+    opacity: 0;
+
+    transform:
+      translateX(0) rotate(0deg) scale(0.7);
+  }
+
+  10% {
+    opacity: 0.75;
+  }
+
+  50% {
+    transform:
+      translateX(50px) rotate(180deg) scale(1);
+  }
+
+  90% {
+    opacity: 0.7;
+  }
+
+  100% {
+    top: 110%;
+    opacity: 0;
+
+    transform:
+      translateX(-60px) rotate(360deg) scale(0.8);
+  }
+}
+
+
+/* =========================================================
+   BUTTERFLIES
+   ========================================================= */
+
+.hero-butterflies {
+  position: absolute;
+  inset: 0;
+
+  z-index: 9;
+  pointer-events: none;
+}
+
+.hero-butterfly {
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: rgba(255, 239, 247, 0.9);
+
+  filter:
+    drop-shadow(0 0 8px rgba(255, 220, 235, 0.7));
+
+  animation: butterflyFloat 12s ease-in-out infinite;
+}
+
+.hero-butterfly-1 {
+  left: 14%;
+  top: 38%;
+  transform: scale(0.8);
+}
+
+.hero-butterfly-2 {
+  right: 15%;
+  top: 28%;
+  transform: scale(0.65);
+
+  animation-delay: 4s;
+}
+
+.butterfly-wing {
+  font-size: 26px;
+
+  animation:
+    wingFlutter 0.7s ease-in-out infinite alternate;
+}
+
+.butterfly-body {
+  margin: 0 2px;
+  font-size: 13px;
+}
+
+@keyframes wingFlutter {
+  from {
+    transform:
+      scaleX(0.75) rotate(-8deg);
+  }
+
+  to {
+    transform:
+      scaleX(1.15) rotate(8deg);
+  }
+}
+
+@keyframes butterflyFloat {
+
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0) rotate(-3deg);
+  }
+
+  25% {
+    transform:
+      translate3d(25px, -20px, 0) rotate(5deg);
+  }
+
+  50% {
+    transform:
+      translate3d(60px, 10px, 0) rotate(-2deg);
+  }
+
+  75% {
+    transform:
+      translate3d(20px, 35px, 0) rotate(4deg);
+  }
+}
+
+
+/* =========================================================
+   HERO CONTENT — VERY SUBTLE FLOAT
+   ========================================================= */
+
+.hero-content {
+  animation:
+    contentFloat 8s ease-in-out infinite;
+}
+
+@keyframes contentFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+
+/* =========================================================
+   BUTTON HOVER
+   ========================================================= */
+
+.hero-cta-group .btn-royal {
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.hero-cta-group .btn-royal:hover {
+  transform: translateY(-5px);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .hero-castle-backdrop {
+    width: 120%;
+    height: 120%;
+    left: -10%;
+    top: -10%;
+  }
+
+  .hero-butterfly-1 {
+    left: 5%;
+    top: 35%;
+  }
+
+  .hero-butterfly-2 {
+    right: 5%;
+    top: 25%;
+  }
+
+  .hero-petals .petal {
+    font-size: 14px;
+  }
+
+  .hero-sparkles {
+    opacity: 0.65;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .hero-castle-backdrop,
+  .hero-clouds-back,
+  .hero-clouds-front,
+  .hero-celestial-glow,
+  .hero-mist-layer-1,
+  .hero-mist-layer-2,
+  .sparkle,
+  .petal,
+  .hero-butterfly,
+  .butterfly-wing,
+  .hero-content {
+    animation: none !important;
+  }
+}
+
+/* =========================================================
+   FORCE CASTLE ANIMATION
+   ========================================================= */
+
+.hero-fairytale .hero-parallax-castle {
+  position: absolute !important;
+  inset: -5% !important;
+  width: 110% !important;
+  height: 110% !important;
+  z-index: 1 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+}
+
+.hero-fairytale .hero-parallax-castle .hero-castle-backdrop {
+  position: absolute !important;
+  display: block !important;
+
+  width: 110% !important;
+  height: 110% !important;
+  max-width: none !important;
+
+  left: -5% !important;
+  top: -5% !important;
+
+  object-fit: cover !important;
+  object-position: center bottom !important;
+
+  opacity: 0.96 !important;
+
+  transform-origin: center center !important;
+  will-change: transform !important;
+
+  animation: REAL_CASTLE_ZOOM 18s ease-in-out infinite !important;
+}
+
+@keyframes REAL_CASTLE_ZOOM {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero-fairytale .hero-parallax-castle .hero-castle-backdrop {
+    animation: none !important;
+    transform: scale(1) !important;
+  }
+}

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D8B878"/>
+      <stop offset="40%" stop-color="#FFF5DF"/>
+      <stop offset="70%" stop-color="#D8B878"/>
+      <stop offset="100%" stop-color="#9E7634"/>
+    </linearGradient>
+    <radialGradient id="roseGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F8DDE8" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#6B4053" stop-opacity="0.2"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background Glow & Circle -->
+  <circle cx="50" cy="50" r="46" fill="url(#roseGlow)" stroke="url(#goldGrad)" stroke-width="2"/>
+  <circle cx="50" cy="50" r="41" fill="none" stroke="url(#goldGrad)" stroke-width="0.75" stroke-dasharray="2,3"/>
+
+  <!-- Ornate Crown / Tiara Top -->
+  <path d="M38 30 L43 23 L50 28 L57 23 L62 30 Z" fill="url(#goldGrad)" opacity="0.9"/>
+  <circle cx="43" cy="21" r="1.5" fill="#FFF"/>
+  <circle cx="50" cy="26" r="1.8" fill="#FFF"/>
+  <circle cx="57" cy="21" r="1.5" fill="#FFF"/>
+
+  <!-- Monogram Letter "A" / Fairytale Script -->
+  <text x="50" y="62" font-family="'Cinzel Decorative', 'Cormorant Garamond', serif" font-size="30" font-weight="bold" fill="url(#goldGrad)" text-anchor="middle" letter-spacing="1">✦</text>
+
+  <!-- Rose Garland Bottom -->
+  <path d="M28 65 Q50 78 72 65" fill="none" stroke="url(#goldGrad)" stroke-width="1.5"/>
+  <circle cx="50" cy="72" r="3.5" fill="#E9A9C3" stroke="url(#goldGrad)" stroke-width="1"/>
+  <circle cx="41" cy="70" r="2.5" fill="#F3C6D8" stroke="url(#goldGrad)" stroke-width="0.8"/>
+  <circle cx="59" cy="70" r="2.5" fill="#F3C6D8" stroke="url(#goldGrad)" stroke-width="0.8"/>
+</svg>

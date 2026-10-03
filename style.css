@@ -1,0 +1,266 @@
+/* ==========================================================================
+   LUXURY PINK FAIRYTALE — CORE DESIGN SYSTEM (style.css)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Italiana&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* --- Luxury Fairytale Color Palette --- */
+  --c-blush-pink: #F8DDE8;
+  --c-soft-pink: #F3C6D8;
+  --c-dusty-rose: #E9A9C3;
+  --c-ivory: #FFF7F8;
+  --c-warm-cream: #F8EBD8;
+  --c-muted-rose: #C995A8;
+  --c-deep-rose: #6B4053;
+  --c-champagne-gold: #D8B878;
+  --c-gold-light: #F6E6C5;
+  --c-gold-dark: #A98342;
+  --c-dark-rose: #3A1E2C;
+  --c-text-primary: #3A1E2C;
+  --c-text-secondary: #744D60;
+  --c-text-muted: #9E7488;
+  
+  /* --- Gradients --- */
+  --grad-sunset-hero: linear-gradient(180deg, #F8DDE8 0%, #F3C6D8 35%, #E9A9C3 70%, #F8EBD8 100%);
+  --grad-castle-glow: linear-gradient(135deg, rgba(248, 221, 232, 0.95), rgba(243, 198, 216, 0.85));
+  --grad-gold-shimmer: linear-gradient(135deg, #D8B878 0%, #FFF5E0 50%, #C89F56 100%);
+  --grad-gold-border: linear-gradient(135deg, rgba(216, 184, 120, 0.8) 0%, rgba(255, 245, 224, 0.4) 50%, rgba(200, 159, 86, 0.8) 100%);
+  --grad-rose-glass: linear-gradient(135deg, rgba(255, 247, 248, 0.82) 0%, rgba(248, 221, 232, 0.65) 100%);
+  --grad-dark-rose: linear-gradient(135deg, #6B4053 0%, #442232 100%);
+  
+  /* --- Shadows & Glows --- */
+  --shadow-fairytale-sm: 0 4px 20px rgba(107, 64, 83, 0.06);
+  --shadow-fairytale-md: 0 10px 35px rgba(107, 64, 83, 0.10);
+  --shadow-fairytale-lg: 0 20px 60px rgba(107, 64, 83, 0.16);
+  --glow-gold: 0 0 25px rgba(216, 184, 120, 0.45);
+  --glow-rose: 0 0 35px rgba(233, 169, 195, 0.5);
+
+  /* --- Typography --- */
+  --font-serif-display: 'Cinzel Decorative', 'Cormorant Garamond', Georgia, serif;
+  --font-serif-heading: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-serif-editorial: 'Italiana', 'Cormorant Garamond', Georgia, serif;
+  --font-script: 'Pinyon Script', cursive;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* --- Layout & Spacing --- */
+  --max-width: 1280px;
+  --header-height: 86px;
+  --border-radius-sm: 8px;
+  --border-radius-md: 16px;
+  --border-radius-lg: 24px;
+  --border-radius-pill: 9999px;
+  --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-magical: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ==========================================================================
+   RESET & BASE STYLES
+   ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--c-ivory);
+  color: var(--c-text-primary);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.7;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Luxury Subtle Texture Overlay */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(216, 184, 120, 0.05) 1px, transparent 0);
+  background-size: 36px 36px;
+  z-index: 999;
+}
+
+/* Ambient Canvas Container */
+#ambient-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+button, input, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+  border: none;
+}
+
+/* ==========================================================================
+   TYPOGRAPHY
+   ========================================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif-heading);
+  font-weight: 600;
+  color: var(--c-deep-rose);
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+.font-script {
+  font-family: var(--font-script);
+  font-weight: 400;
+}
+
+.font-editorial {
+  font-family: var(--font-serif-editorial);
+  letter-spacing: 0.08em;
+}
+
+.eyebrow-text {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--c-champagne-gold);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.eyebrow-text::before,
+.eyebrow-text::after {
+  content: '✦';
+  font-size: 0.7rem;
+  color: var(--c-champagne-gold);
+}
+
+.page-title {
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  color: var(--c-deep-rose);
+  margin-bottom: 16px;
+  font-family: var(--font-serif-heading);
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.page-subtitle {
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  color: var(--c-text-secondary);
+  font-family: var(--font-serif-heading);
+  font-style: italic;
+  max-width: 680px;
+  margin-bottom: 36px;
+}
+
+.lead-paragraph {
+  font-size: 1.125rem;
+  color: var(--c-text-secondary);
+  line-height: 1.8;
+}
+
+/* ==========================================================================
+   LAYOUT CONTAINERS
+   ========================================================================== */
+
+.page-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 28px;
+  position: relative;
+  z-index: 2;
+}
+
+.section-wrapper {
+  padding: 100px 0;
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.section-header.text-left {
+  text-align: left;
+}
+
+/* Ornate Filigree Divider */
+.filigree-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 24px auto;
+  color: var(--c-champagne-gold);
+  opacity: 0.85;
+}
+
+.filigree-divider::before,
+.filigree-divider::after {
+  content: '';
+  height: 1px;
+  width: 80px;
+  background: linear-gradient(90deg, transparent, var(--c-champagne-gold), transparent);
+}
+
+/* ==========================================================================
+   SCROLLBAR & SELECTION
+   ========================================================================== */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--c-ivory);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--c-dusty-rose);
+  border-radius: 5px;
+  border: 2px solid var(--c-ivory);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--c-muted-rose);
+}
+
+::selection {
+  background: var(--c-soft-pink);
+  color: var(--c-deep-rose);
+}

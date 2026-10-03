@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="100%" height="100%">
+  <defs>
+    <!-- Sunset Rose Sky -->
+    <linearGradient id="gardenSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#DDA9C4"/>
+      <stop offset="35%" stop-color="#F8DDE8"/>
+      <stop offset="65%" stop-color="#F3C6D8"/>
+      <stop offset="100%" stop-color="#F8EBD8"/>
+    </linearGradient>
+
+    <!-- Gold Accent -->
+    <linearGradient id="goldGarden" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8CF96"/>
+      <stop offset="50%" stop-color="#FFF8E7"/>
+      <stop offset="100%" stop-color="#B88E44"/>
+    </linearGradient>
+
+    <!-- Fountain Water Glow -->
+    <linearGradient id="fountainWater" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFF" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#F8DDE8" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#D8B878" stop-opacity="0.4"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#gardenSky)"/>
+
+  <!-- Distant Illuminated Fairytale Castle Spire Silhouette -->
+  <g fill="#995E79" opacity="0.35" transform="translate(680, 240)">
+    <polygon points="120,40 100,160 140,160"/>
+    <rect x="105" y="160" width="30" height="120"/>
+    <polygon points="60,90 45,180 75,180"/>
+    <rect x="50" y="180" width="20" height="100"/>
+    <polygon points="180,90 165,180 195,180"/>
+    <rect x="170" y="180" width="20" height="100"/>
+  </g>
+
+  <!-- Garden Arches & Topiary -->
+  <path d="M0 600 Q400 520 800 560 T1600 540 L1600 900 L0 900 Z" fill="#7D4961" opacity="0.4"/>
+  <path d="M0 660 Q500 590 1000 630 T1600 620 L1600 900 L0 900 Z" fill="#5F3248" opacity="0.7"/>
+
+  <!-- Classic European Trellis Rose Arches Left & Right -->
+  <!-- Left Trellis -->
+  <path d="M120 750 A160 160 0 0 1 380 750" fill="none" stroke="url(#goldGarden)" stroke-width="6"/>
+  <path d="M140 750 A140 140 0 0 1 360 750" fill="none" stroke="url(#goldGarden)" stroke-width="2" stroke-dasharray="8,6"/>
+  <!-- Right Trellis -->
+  <path d="M1220 750 A160 160 0 0 1 1480 750" fill="none" stroke="url(#goldGarden)" stroke-width="6"/>
+  <path d="M1240 750 A140 140 0 0 1 1460 750" fill="none" stroke="url(#goldGarden)" stroke-width="2" stroke-dasharray="8,6"/>
+
+  <!-- Blooming Roses Climbing Arches -->
+  <g fill="#F3C6D8" stroke="#D8B878" stroke-width="1.5">
+    <circle cx="160" cy="650" r="10"/>
+    <circle cx="210" cy="610" r="13"/>
+    <circle cx="270" cy="595" r="14"/>
+    <circle cx="330" cy="620" r="12"/>
+    <circle cx="1260" cy="650" r="11"/>
+    <circle cx="1320" cy="610" r="13"/>
+    <circle cx="1380" cy="595" r="14"/>
+    <circle cx="1440" cy="630" r="12"/>
+  </g>
+
+  <!-- Central Baroque Garden Tiered Fountain -->
+  <g transform="translate(800, 680)">
+    <!-- Base Basin -->
+    <ellipse cx="0" cy="80" rx="220" ry="40" fill="#E8CF96" stroke="#9E7634" stroke-width="2"/>
+    <ellipse cx="0" cy="74" rx="200" ry="32" fill="#F8DDE8" opacity="0.9"/>
+    
+    <!-- Middle Tier -->
+    <rect x="-24" y="0" width="48" height="80" fill="url(#goldGarden)" stroke="#9E7634" stroke-width="1.5"/>
+    <ellipse cx="0" cy="0" rx="110" ry="24" fill="#E8CF96" stroke="#9E7634" stroke-width="2"/>
+    <ellipse cx="0" cy="-4" rx="98" ry="18" fill="#F8DDE8" opacity="0.9"/>
+
+    <!-- Top Spout Tier -->
+    <rect x="-14" y="-55" width="28" height="55" fill="url(#goldGarden)" stroke="#9E7634" stroke-width="1.5"/>
+    <ellipse cx="0" cy="-55" rx="45" ry="12" fill="#E8CF96" stroke="#9E7634" stroke-width="1.5"/>
+
+    <!-- Flowing Tiered Water Spray -->
+    <path d="M0 -75 Q-20 -105 -35 -55 Q-20 -45 0 -45 Q20 -45 35 -55 Q20 -105 0 -75 Z" fill="url(#fountainWater)"/>
+    <path d="M-90 5 Q-130 35 -140 75" fill="none" stroke="url(#fountainWater)" stroke-width="3" stroke-dasharray="4,4"/>
+    <path d="M90 5 Q130 35 140 75" fill="none" stroke="url(#fountainWater)" stroke-width="3" stroke-dasharray="4,4"/>
+  </g>
+
+  <!-- Soft Sunset Mist in Foreground -->
+  <rect y="740" width="1600" height="160" fill="url(#gardenSky)" opacity="0.8" style="filter: blur(25px);"/>
+</svg>
